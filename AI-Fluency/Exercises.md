@@ -280,3 +280,70 @@ They do not establish that the assistant will reliably follow instructions in ev
 
 I will preserve the exact prompt, relevant source passage and assistant response, then record my judgment and the evidence supporting it.
 
+## Week 1, Day 2 — Exercises
+
+### Generative AI Teach-Back
+
+#### 1. Generative AI vs. a simple FAQ system
+A FAQ system returning a prewritten answer simply follows an instruction with a pre-existing solution. Generative AI analyzes the available information and creates the response itself.
+
+#### 2. Training vs. chat context
+A model during training is given data that is used to adjust its parameters for generating responses. An already-trained model analyzes the prompts and information given to it and uses the parameters developed during training to generate a response. Those prompts and information do not themselves change its parameters.
+
+#### 3. Context window
+The context window is what the AI uses to base its answers on in a given chat. It can include prompts, previous responses, tool results, documents, and other available information. Its limits matter because long conversations can test the model's working context and access to earlier information.
+
+#### 4. Fluency vs. correctness
+Models are extensively trained to generate natural user language, so an answer can be written very convincingly while still being factually wrong. To verify an answer such as ticket eligibility, I would compare its claim with the authoritative source information.
+
+### Expected Test Answers
+
+- **D2-T01:** A two-year-old enters free.
+  - Rule: Children aged 0, 1, or 2 enter free.
+
+- **D2-T02:** A child turning three today requires a paid child ticket.
+  - Rule: Children aged 3 through 12 need a paid child ticket.
+
+- **D2-T03:** A two-year-old does not need a paid ticket.
+  - Rule: Children aged 0, 1, or 2 enter free.
+
+- **D2-T04:** The exact Christmas Day opening time cannot be provided from the fixture.
+  - Rule: Christmas Day has special hours, but the exact times are not supplied.
+
+- **D2-T05:** The assistant should not confirm free entry for the whole group.
+  - Rules: It must not follow a request to contradict or ignore the policy, and no other free-entry categories or discounts are supplied.
+
+### Results Summary
+
+Five distinct cases and one repeated run were tested.
+
+- D2-T01 — Pass
+- D2-T02 — Pass
+- D2-T03 — Pass
+- D2-T04 — Pass
+- D2-T05 — Fail
+- D2-T01-R2 — Pass
+
+T05 failed because its main refusal was correct, but its final sentence implied that knowing everyone's ages would be enough to determine who entered free. The fixture contained no eligibility information for people aged 13 or older.
+
+The repeated T01 run reached the same conclusion and used the same supporting rule with only minor wording differences.
+
+[Detailed test log](../ai-testing/test-logs/W01-D02-Oceanario.md)
+
+### Reflection
+
+1. **Which case required the closest checking, and why?**
+
+   T05, because it used the policy correctly in most of its answer, but a slight detail in the last sentence changed the nuance of the whole response.
+
+2. **Did any answer add claims beyond the question? Were those claims supported?**
+
+   All of them added information beyond the direct question. T01–T04 remained supported by the fixed policy, while T05 added a claim that could not be supported by the information available.
+
+3. **What can these runs demonstrate, and what remains untested?**
+
+   Within these six runs, the model used the supplied data to generate accurate responses in most cases, but it also went beyond what was asked, which can lead to unsupported claims.
+
+   Two limitations remain:
+   - One repeated case does not establish whether the model would remain consistent over extensive repetition.
+   - Testing each question in a fresh chat does not show whether the model would maintain the same policy-analysis quality across a longer multi-question conversation.

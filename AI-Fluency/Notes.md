@@ -6,7 +6,7 @@
 
 
 
-\*\*Date:\*\* 2026-10-02  
+\*\*Date:\*\* 2026-10-02
 
 \*\*Status:\*\* Completed and reviewed
 
@@ -129,4 +129,36 @@ The three Anthropic exercises and the Oceanário FAQ testing exercise are record
 \- \[Oceanário de Lisboa — FAQs](https://oceanario.pt/en/faqs/)
 
 \- \[MLB — Four-Seam Fastball](https://www.mlb.com/glossary/pitch-types/four-seam-fastball)
+
+## Week 1, Day 2 — Generative AI Fundamentals and Evidence-Based Testing
+
+
+
+\### Resource
+
+Anthropic AI Fluency — Lesson 4: Generative AI Fundamentals
+
+
+
+\### Key Lessons
+
+\- A traditional FAQ system can return a prewritten answer, while generative AI creates a response using learned patterns and the information available in its current context.
+
+\- Training changes the model's learned parameters. Giving an already-trained model a FAQ or other information in a chat gives it context to use, but does not by itself retrain those parameters.
+
+\- A context window is the limited information available to the model while generating a response. Long conversations or documents can test that limit and affect access to earlier information.
+
+\- A fluent and confident answer is not evidence that it is correct. Important factual claims should be checked against the authoritative source.
+
+
+
+\### Correction
+
+I initially described model training too similarly to giving a trained model context. I corrected this distinction: training changes the model's parameters, while information supplied during a chat is used as context for the current interaction.
+
+
+
+\### Reflection
+
+Today's testing reinforced that an answer can be mostly correct while still failing because of one unsupported claim. I need to evaluate the whole response rather than stopping once the main answer looks correct.
 
