@@ -347,3 +347,46 @@ The repeated T01 run reached the same conclusion and used the same supporting ru
    Two limitations remain:
    - One repeated case does not establish whether the model would remain consistent over extensive repetition.
    - Testing each question in a fresh chat does not show whether the model would maintain the same policy-analysis quality across a longer multi-question conversation.
+
+## Week 1, Day 3 — Lesson 5 and hotel-policy evaluation
+
+### Lesson 5 reflections
+
+#### 1. How will understanding the way generative AI is trained change one way I work with it?
+
+If a restaurant changed its table reservation policy yesterday, I would not trust the model's memory. I would give it the current policy or check the live source.
+
+#### 2. What ethical responsibility matters when using AI to answer a hotel guest?
+
+The guest should know that they are being attended to by AI. I would also give the AI clear instructions not to create rules outside the supplied policy and to direct the guest to human support whenever the policy does not contain an answer.
+
+#### 3. Contradicting the policy versus missing information
+
+If the assistant's answer contradicts the supplied policy, it should change the answer to match the policy.
+
+If the policy does not contain the answer, the assistant should say that the information is not stated and refer the guest to reception or customer service rather than guessing.
+
+#### 4. What if the policy changed yesterday?
+
+It is not impossible for the assistant to answer correctly as long as it is given access to the new policy. I would still supervise answers concerning the changed policy because access to current information does not guarantee that the response will be correct.
+
+### HOTEL-P1 evaluation
+
+I wrote expectations before testing and then ran four separate live cases using the same fictional hotel policy and prompt.
+
+All four live responses passed the three dimensions used in this exercise:
+
+- answer correctness;
+- evidence quality;
+- instruction following.
+
+This means the assistant succeeded on these four observed cases. It does not establish its general reliability or guarantee that it will behave correctly on future or different cases.
+
+I also reviewed two prewritten teaching samples separately from the live outputs:
+
+- D3-C01 contained an invented EUR 20 early-check-in fee.
+- D3-C02 gave a correct breakfast answer but cited the wrong policy ID.
+
+The detailed prompt, outputs, ratings, corrections, and reflections are recorded in:
+
+`ai-testing/test-logs/W01-D03-Hotel.md`

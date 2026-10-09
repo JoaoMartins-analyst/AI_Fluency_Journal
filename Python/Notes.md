@@ -64,3 +64,78 @@ Display:
 
 `print("Total Tests:", total)`
 
+
+## Week 1, Day 3 — Python functions
+
+### Environment
+
+I installed Python 3.14.8 on Windows and successfully ran Python from PowerShell.
+
+I learned the difference between:
+
+- an editor, where I write the `.py` file;
+- the saved `.py` file containing the instructions;
+- the Python interpreter, which executes the code;
+- PowerShell, which I can use to tell Python which file to execute.
+
+For this exercise I edited the file with Notepad and ran it from PowerShell.
+
+### Functions
+
+A function is a reusable block of code.
+
+Example structure:
+
+`def function_name(parameters):`
+
+The indented lines underneath belong to the function.
+
+Python executes those statements from top to bottom.
+
+### Parameters and arguments
+
+Parameters are the names defined by the function.
+
+In:
+
+`def observed_pass_percentage(passed, failed, needs_review):`
+
+the parameters are:
+
+- `passed`
+- `failed`
+- `needs_review`
+
+When calling:
+
+`observed_pass_percentage(3, 1, 1)`
+
+the values `3`, `1`, and `1` are the arguments.
+
+Python matches them by position:
+
+`passed = 3`
+`failed = 1`
+`needs_review = 1`
+
+### return versus print()
+
+`return` sends a calculated value back to the place where the function was called.
+
+For example:
+
+`batch_a_result = observed_pass_percentage(3, 1, 1)`
+
+stores the returned value in `batch_a_result`.
+
+`print()` only displays a value.
+
+If a function prints a result but has no explicit `return`, the function returns `None`.
+
+### Indentation
+
+Python uses indentation as part of its syntax.
+
+I initially placed `return pass_percentage` outside the function. I corrected its indentation so that it belongs to the function body.
+
+Using four spaces per indentation level is the standard Python style convention and helps avoid inconsistent tab/space indentation.

@@ -162,3 +162,47 @@ I initially described model training too similarly to giving a trained model con
 
 Today's testing reinforced that an answer can be mostly correct while still failing because of one unsupported claim. I need to evaluate the whole response rather than stopping once the main answer looks correct.
 
+## Week 1, Day 3 — Capabilities, limitations, and evidence
+
+
+
+\### Resource
+
+Anthropic AI Fluency — Lesson 5: Capabilities \& limitations
+
+
+
+\### Key ideas
+
+
+
+\- A model's previous training is different from information supplied to it during use. If a restaurant or hotel changes a policy, I can give the assistant the current policy or provide access to a current source rather than relying on its memory.
+
+\- Having access to current information does not guarantee that the assistant will use it correctly, so important answers still need checking.
+
+\- When using AI with guests, the assistant should not invent rules or services that are absent from the supplied policy and should refer the guest to human support when the information is unavailable.
+
+\- "Not stated in the policy" is not the same thing as "No."
+
+\- If an AI answer contradicts the supplied policy, the answer should be corrected to match the policy.
+
+\- If the policy does not contain the answer, the assistant should say that the information is not stated and refer the guest to reception or customer service rather than guessing.
+
+
+
+\### Correction I made
+
+
+
+I initially answered the contradiction-versus-missing-information question by focusing on how the system could be improved later, such as changing instructions or test coverage.
+
+
+
+The immediate response is simpler:
+
+
+
+\- contradiction → follow the supplied policy;
+
+\- missing information → say it is not stated and refer to human support.
+
