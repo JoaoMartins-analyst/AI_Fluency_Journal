@@ -151,3 +151,69 @@ I received tutor explanations about:
 - indentation.
 
 My first code attempt placed the `return` statement outside the function. After feedback, I corrected the indentation and ran the script successfully.
+
+## Week 1, Day 4 — Empty-batch percentage exercise
+
+### Requirement change
+
+The Day 3 function assumed that at least one case existed.
+
+Day 4 added a new requirement:
+
+If `passed + failed + needs_review == 0`, the function must return `None` before attempting division.
+
+For a non-empty batch, it must still calculate:
+
+`passed / total * 100`
+
+### Plain-English plan
+
+1. Calculate the total of tests.
+2. Check whether the total equals 0.
+3. If the total equals 0, return `None` immediately.
+4. Otherwise, calculate `pass_percentage = passed / total * 100`.
+5. Return `pass_percentage`.
+
+### Predictions and actual results
+
+| Case | Passed | Failed | Needs review | Predicted total | Predicted return | Actual result |
+|---|---:|---:|---:|---:|---:|---:|
+| D4-P01 | 3 | 1 | 1 | 5 | 60.0 | 60.0 |
+| D4-P02 | 0 | 2 | 1 | 3 | 0.0 | 0.0 |
+| D4-P03 | 0 | 0 | 0 | 0 | None | No cases evaluated |
+| D4-P04 | 0 | 0 | 4 | 4 | 0.0 | 0.0 |
+| D4-P05 | 2 | 0 | 0 | 2 | 100.0 | 100.0 |
+
+All five actual results matched the expected behaviour.
+
+### Q1
+Why must the empty-batch check happen before division, and what does `return` do at that point?
+
+**Answer:**  
+Python cannot calculate `0 / 0`; it raises a `ZeroDivisionError`. So even if the script only had one calculation, the check would still be required. When `total == 0`, `return None` immediately ends that function call, so Python never reaches the division.
+
+### Q2
+Why are `0%` and `None` different in this exercise?
+
+**Answer:**  
+`0%` can happen with 100000 tests evaluated, as long as none have passed. `None` means there were no tests evaluated.
+
+### Q3
+What did AI contribute, and what did you personally do to verify the result?
+
+**Answer:**  
+AI wrote the code changes for this exercise, but I had predictions before implementation, inspected the AI-generated change, created the test calls, added P05 myself, executed the script, and compared the real output against those expected results.
+
+### Assistance and corrections
+
+AI was deliberately used to draft the small zero-total modification.
+
+I reviewed where the zero-total check, `return None`, and the original percentage calculation appeared before running it.
+
+Guided help was used to:
+- understand that different function calls can store their results in separate variables;
+- identify a copied `D4-P01` output label in several test blocks;
+- distinguish `None` from a valid `0.0%`;
+- correct the initial idea that the zero check was mainly a performance optimisation. Its main purpose is preventing `ZeroDivisionError`.
+
+D4-P05 was added by me as the final understanding check.

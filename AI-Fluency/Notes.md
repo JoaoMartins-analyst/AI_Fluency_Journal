@@ -206,3 +206,71 @@ The immediate response is simpler:
 
 \- missing information → say it is not stated and refer to human support.
 
+## Week 1, Day 4 — Delegation and verification
+
+
+
+\### Resource
+
+Anthropic AI Fluency — Lesson 6: A Closer Look at Delegation  
+
+https://academy.claude.com/courses/ai-fluency-framework-foundations/a-closer-look-at-delegation
+
+
+
+\### Delegation concepts
+
+
+
+The three concepts studied were:
+
+
+
+\- Problem Awareness — understand what a useful result actually requires.
+
+\- Platform Awareness — understand what the AI can and cannot do.
+
+\- Task Delegation — decide which parts should be handled by AI and which require human involvement.
+
+
+
+For the testing task, a useful result required more than simply getting an answer from an AI. I needed the number of tests passed, failed and needing review, plus evidence that each judgement matched the supplied policy.
+
+
+
+The AI can help:
+
+\- generate or review guest questions;
+
+\- analyse responses against a supplied policy;
+
+\- calculate results;
+
+\- draft or review Python code;
+
+\- help summarise work.
+
+
+
+The human still needs to:
+
+\- check whether claims are actually supported by the policy;
+
+\- notice unsupported extra claims;
+
+\- decide whether evidence is sufficient;
+
+\- run local Python code;
+
+\- compare actual execution against expected results;
+
+\- make the final judgement.
+
+
+
+An important correction was that AI can draft and review Python code, but it cannot prove that the code actually executed correctly on my computer. Local execution still has to be verified by me.
+
+
+
+Another lesson was that responsibilities can be shared. Modifying Python code and writing a portfolio summary do not have to be exclusively AI or exclusively human tasks: AI can assist, while the human checks and approves the result.
+

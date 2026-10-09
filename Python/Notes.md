@@ -139,3 +139,60 @@ Python uses indentation as part of its syntax.
 I initially placed `return pass_percentage` outside the function. I corrected its indentation so that it belongs to the function body.
 
 Using four spaces per indentation level is the standard Python style convention and helps avoid inconsistent tab/space indentation.
+
+## Week 1, Day 4 — Conditionals and empty batches
+
+### Resource
+CS50P — Lecture 1: Conditionals  
+https://cs50.harvard.edu/python/notes/1/
+
+### Conditionals
+
+An `if` statement allows Python to run a section of code only when a condition is true.
+
+`=` assigns a value.
+
+`==` compares two values.
+
+Example:
+
+`if total == 0:`
+
+This checks whether `total` is equal to zero.
+
+### Early return
+
+`return` sends a value back to the caller and immediately ends that function call.
+
+For an empty batch:
+
+`return None`
+
+must happen before division.
+
+Without the zero check, trying to calculate `0 / 0` raises a `ZeroDivisionError`.
+
+### `None` vs `0`
+
+They mean different things in this exercise.
+
+- `0.0` means cases were evaluated, but zero percent passed.
+- `None` means there were no cases evaluated, so no percentage can be calculated.
+
+A batch containing 100,000 evaluated cases and zero passes would still have a valid result of `0.0%`.
+
+### Displaying the result
+
+The returned value can be stored in a variable.
+
+To detect an unavailable result:
+
+`if result is None:`
+
+This is different from checking whether the result equals zero, because `0.0` is a valid percentage.
+
+If the result is `None`, display:
+
+`No cases evaluated`
+
+Otherwise, display the calculated percentage.

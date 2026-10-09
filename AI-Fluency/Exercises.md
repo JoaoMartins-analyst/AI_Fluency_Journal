@@ -390,3 +390,41 @@ I also reviewed two prewritten teaching samples separately from the live outputs
 The detailed prompt, outputs, ratings, corrections, and reflections are recorded in:
 
 `ai-testing/test-logs/W01-D03-Hotel.md`
+
+## Week 1, Day 4 — Delegation exercise
+
+### Human/AI work plan
+
+A useful testing result should include:
+- correct and complete answers;
+- Pass / Fail / Needs review judgements;
+- totals for the batch;
+- an observed pass percentage;
+- evidence allowing the result to be checked manually.
+
+AI can help review responses, calculate results and draft code, but I must verify the policy evidence and run the Python code locally.
+
+For guest questions and policy decisions, both AI and human review can contribute.
+
+For Python changes, AI can draft the change, while I inspect it, run it and compare the output against expected results.
+
+For portfolio summaries, AI can help improve wording, but I must make sure the statement accurately represents what I actually did.
+
+### Hotel testing conclusion
+
+Three live HOTEL-P1 cases were tested.
+
+- Pass: 2
+- Fail: 1
+- Needs review: 0
+- Not run: 0
+- Total: 3
+- Observed pass percentage: 66.7%
+
+The tests showed that even with strict instructions, an AI can add an unsupported factual claim. The following two cases passed, but three tests are not enough to conclude that the model would continue following the rules on future or different cases.
+
+Detailed evidence: `../ai-testing/test-logs/W01-D04-Hotel.md`
+
+### Portfolio evidence
+
+I tested an AI assistant against a fictional hotel policy, checking whether its answers were correct and supported by the cited policy, then used AI to help modify a Python script and verified the change by running predefined test cases and comparing the actual results with my predictions.
